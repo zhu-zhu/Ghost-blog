@@ -5,24 +5,28 @@
         </a>
     {{/if}}
     <div class="post-card-content">
-        <a class="post-card-content-link" href="{{url}}">
-            <header class="post-card-header">
-                {{#if primary_tag}}
-                    <span class="post-card-tags">{{primary_tag.name}}</span>
-                {{/if}}
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}</p>
-            </section>
-        </a>
+        <header class="post-card-header">
+            <h2 class="post-card-title"><a class="post-card-content-link" href="{{url}}">{{title}}</a></h2>
+            <div class="entry-meta">
+                <span class="post-tag">{{tags}}</span>
+                <span class="dot">•</span>
+                <span class="post-time">更新于<time datetime="{{date format='YYYY-MM-DD'}}"> {{date format='YYYY-MM-DD'}}</time></span>
+                <span>on {{ authors }}</span>
+            </div>
+        </header>
+        <section class="post-card-excerpt">
+            <p>{{excerpt words="33"}}</p>
+        </section>
         <footer class="post-card-meta">
 
             <ul class="author-list">
-            {{#foreach authors}}
+                {{!-- <span class="post-tag">{{tags}}</span> --}}
+            {{#foreach tags}}
                 <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
+                    <span class="tags-links">
+                        <a href="{{url}}">#{{name}}</a>
+                    </span>
+                    {{!-- <div class="author-name-tooltip">
                         {{name}}
                     </div>
 
@@ -30,12 +34,14 @@
                         <a href="{{url}}" class="static-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
                     {{else}}
                         <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                    {{/if}}
+                    {{/if}} --}}
                 </li>
             {{/foreach}}
             </ul>
 
-            <span class="reading-time">{{reading_time}}</span>
+            <span class="reading-time">
+                <a href="{{url}}">READ MORE</a>
+            </span>
 
         </footer>
     </div>

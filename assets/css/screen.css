@@ -31,8 +31,13 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 @import "global.css";
 
-body {
+body, p {
     background: #f4f8fb;
+    font-family: 'Lucida Grande','Helvetica Neue',Helvetica,Arial,Verdana,'PingFang SC','Hiragino Sans GB',STHeiti,'Microsoft YaHei','WenQuanYi Micro Hei','WenQuanYi Micro Hei Mono','WenQuanYi Zen Hei','WenQuanYi Zen Hei Mono','Noto Sans CJK SC','Source Han Sans CN',SimSun,sans-serif
+}
+
+a{
+    text-decoration:none
 }
 
 .img {
@@ -68,14 +73,23 @@ body {
 /* Full width page blocks */
 .outer {
     position: relative;
-    padding: 0 4vw;
+    /* padding: 0 4vw; */
+}
+
+.out {
+    max-width: none;
 }
 
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
-    max-width: 1040px;
+    /* max-width: 1040px; */
     width: 100%;
+}
+
+.innerer {
+    margin: 0 auto;
+    width: 1040px;
 }
 
 /* Usage:
@@ -111,10 +125,30 @@ body {
 .site-header {
     position: relative;
     padding-top: 12px;
-    padding-bottom: 12px;
     color: #fff;
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
+}
+
+.post-header {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    /* background: #0da0bb; */
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.post-header:hover {
+    background: rgba(0,188,212,.97);
+}
+
+.unpinned {
+    width: 700px;
+    display: flex;
+    justify-content: center;
 }
 
 .site-header:before {
@@ -197,26 +231,31 @@ body {
     position: relative;
     z-index: 300;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     overflow-y: hidden;
-    height: 40px;
+    height: 60px;
     font-size: 1.2rem;
 }
 
 .site-nav-left {
+    width: 700px;
     display: flex;
     align-items: center;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     margin-right: 10px;
-    padding-bottom: 80px;
     letter-spacing: 0.4px;
     white-space: nowrap;
-
     -ms-overflow-scrolling: touch;
+    justify-content: center;
 }
+
+.site-nav-left .nav {
+    opacity: 1;
+}
+
 
 /* Site Nav Hack Explanation (above):
 
@@ -249,30 +288,61 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .nav {
+    width: 100%;
     display: flex;
-    margin: 0 0 0 -12px;
+    /* margin: 0 0 0 -12px; */
+    margin: 0;
     padding: 0;
     list-style: none;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.post-header:hover .nav {
+    opacity: 1;
+}
+
+.nav li a:hover {
+    border-bottom: 4px solid #ffffff;
 }
 
 .nav li {
+    height: 60px;
     display: block;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
+    flex-grow: 1;
+    text-align: center;
 }
 
 .nav li a {
+    height: 64px;
     display: block;
     margin: 0;
-    padding: 10px 12px;
+    padding: 0px 12px;
     color: #fff;
     opacity: 0.8;
+    font-size: 16px;
+    line-height: 60px;
+    border-bottom: 4px solid #00bcd4;
+    transition: all .3s;
 }
 
 .nav li a:hover {
     text-decoration: none;
     opacity: 1;
+    height: 60px;
+}
+
+.post-blog-logo {
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+
+.post-blog-logo img {
+    width: 150px;
 }
 
 .site-nav-right {
@@ -384,12 +454,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card {
-    width: 100%;
+    width: 700px;
     /* flex: 1 1 300px;
     display: flex;
     flex-direction: column; */
-    overflow: hidden;
-    margin: 0 20px 40px;
+    /* overflow: hidden; */
+    position: relative;
+    margin: 40px auto;
     min-height: 300px;
     background: #fff center center;
     background-size: cover;
@@ -398,10 +469,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transition: all 0.5s ease;
 }
 
-.post-card:hover {
-    box-shadow: rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px;
-    transition: all 0.4s ease;
-    transform: translate3D(0, -1px, 0) scale(1.02);
+.post-card:after {
+    position: absolute;
+    bottom: -43px;
+    left: 50%;
+    width: 150px;
+    margin-left: -75px;
+    content: "";
+    border-bottom: 2px solid #ddd;
 }
 
 .post-card-image-link {
@@ -409,6 +484,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     overflow: hidden;
     border-radius: 5px 5px 0 0;
+    margin-bottom: 1em;
+}
+
+.post-card-image-link:hover .post-card-image {
+    transform: scale(1.1)
 }
 
 .post-card-image {
@@ -416,18 +496,20 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 200px;
     background: var(--lightgrey) no-repeat center center;
     background-size: cover;
+    transition: all .3s;
 }
 
 .post-card-content-link {
     position: relative;
     flex-grow: 1;
     display: block;
-    padding: 25px 25px 0;
     color: var(--darkgrey);
+    transition: all .2s;
 }
 
 .post-card-content-link:hover {
     text-decoration: none;
+    color: #16a085;
 }
 
 .post-card-tags {
@@ -443,6 +525,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-title {
     margin-top: 0;
+    font-size: 28px;
+    margin: 0;
 }
 
 .post-card-content {
@@ -454,6 +538,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-excerpt {
     font-family: Georgia, serif;
+    padding: 0 25px 0;
+    margin-top: 5px;
 }
 
 .post-card-meta {
@@ -586,12 +672,56 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .reading-time {
     flex-shrink: 0;
     margin-left: 20px;
-    color: var(--midgrey);
+    color: #738a94;
     font-size: 1.2rem;
-    line-height: 33px;
+    /* line-height: 33px; */
     font-weight: 500;
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
     text-transform: uppercase;
+}
+
+.reading-time a {
+    color: #00BCD4;
+}
+
+.tags-links {
+
+}
+
+.tags-links a {
+    margin-right: .5em;
+    padding: 2px 4px;
+    border-radius: 2px;
+    background: #ccc;
+    color: #fff;
+    transition: all .3s;
+    font-size: 1.2rem;
+}
+
+.tags-links a:hover {
+    background: #aaa;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    font-size: 16px;
+    line-height: 44px;
+    color: #CCC;
+}
+
+.page-number {
+    margin: auto 20px;
+}
+
+.prev {
+    display: flex;
+    align-items: center;
+}
+
+.prev span {
+    margin: auto 7px;
 }
 
 /* Special Styling for home page grid (below):
@@ -674,10 +804,28 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-header {
     margin: 0 auto;
-    padding: 6vw 3vw 3vw;
-    max-width: 1040px;
-    text-align: center;
+    /* padding: 6vw 3vw 3vw; */
+    /* text-align: center; */
+    background: 50% #00BCD4;
+    background-size: cover;
+    margin-bottom: -110px;
+    clear: both;
 }
+
+.post-cover {
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.post-cover img {
+    width: 100%;
+    height: 220px;
+    margin: 0;
+    padding: 0;
+}
+
 @media (max-width: 500px) {
     .post-full-header {
         padding: 14vw 3vw 10vw;
@@ -700,7 +848,10 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-title {
     margin: 0;
-    color: color(var(--darkgrey) l(-5%));
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
 }
 
 .date-divider {
@@ -731,14 +882,35 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-full-content {
+    width: 700px;
     position: relative;
     margin: 0 auto;
-    padding: 70px 100px 0;
+    /* padding: 70px 100px 0; */
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.2rem;
     line-height: 1.6em;
     background: #fff;
+    padding: 6px;
+}
+
+.color-background {
+    transition: all .5s;
+    overflow: hidden;
+    color: #FFF;
+}
+
+.wp {
+    margin-bottom: 260px;
+    margin-top: 150px;
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    clear: both;
+}
+
+.wp span, .wp span a {
+    color: #c4c0cc;
 }
 
 @media (max-width: 1170px) {
@@ -752,7 +924,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     }
 }
 
-.post-full-content:before {
+/* .post-full-content:before {
     content: "";
     position: absolute;
     top: 15px;
@@ -778,7 +950,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     background: rgba(39,44,49,0.15);
     filter: blur(5px);
     transform: rotate(5deg);
-}
+} */
 
 .no-image .post-full-content {
     padding-top: 0;
@@ -842,7 +1014,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .post-full-content img,
 .post-full-content video {
     display: block;
-    margin: 1.5em auto;
+    /* margin: 1.5em auto; */
     max-width: 1040px;
     height: auto;
 }
@@ -1273,7 +1445,7 @@ Usage (In Ghost editor):
     align-items: center;
     margin: 0 auto;
     padding: 3vw 0 6vw 0;
-    max-width: 840px;
+    max-width: 700px;
 }
 
 /* 7.2.1 Single Author Byline
@@ -1332,6 +1504,46 @@ Usage (In Ghost editor):
     border-color: var(--blue);
     color: var(--blue);
     text-decoration: none;
+}
+
+.post-card-header {
+    margin: 0 25px;
+}
+
+.entry-meta {
+    margin-top: .5em;
+    color: #999;
+}
+
+.entry-meta span {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.entry-meta a {
+    color: #00BCD4
+}
+
+.dot {
+    margin: 0 .4em
+}
+
+span {
+    background: none !important;
+    text-indent: 0 !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+.post-time {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #999;
+}
+
+.post-tag {
+    line-height: 1.7;
+    font-size: 14px;
 }
 
 /* 7.2.2 Multiple Author Byline
@@ -2220,6 +2432,7 @@ Usage (In Ghost editor):
 }
 
 .site-footer-content {
+    width: 700px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
