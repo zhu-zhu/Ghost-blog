@@ -31,8 +31,8 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 @import "global.css";
 
-body, p {
-    background: #f4f8fb;
+body, p, div {
+    /* background: #f4f8fb; */
     font-family: 'Lucida Grande','Helvetica Neue',Helvetica,Arial,Verdana,'PingFang SC','Hiragino Sans GB',STHeiti,'Microsoft YaHei','WenQuanYi Micro Hei','WenQuanYi Micro Hei Mono','WenQuanYi Zen Hei','WenQuanYi Zen Hei Mono','Noto Sans CJK SC','Source Han Sans CN',SimSun,sans-serif
 }
 
@@ -540,6 +540,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-family: Georgia, serif;
     padding: 0 25px 0;
     margin-top: 5px;
+}
+
+.post-card-excerpt p {
+    border-left: 5px solid #00bcd4;
+    padding-left: 10px;
 }
 
 .post-card-meta {
@@ -2429,6 +2434,7 @@ span {
     padding-bottom: 60px;
     color: #fff;
     background: color(var(--darkgrey) l(-15%));
+    margin-top: 50px;
 }
 
 .site-footer-content {
@@ -2473,6 +2479,22 @@ span {
 
 .site-footer-nav a:first-of-type:before {
     display: none;
+}
+
+.post-copyright {
+    border: 1px solid #3eb0ef;
+    border-left: 3px solid #3eb0ef;
+    padding-left: 10px;
+    background: #f7f7f7;
+    margin: 1em 0;
+    border-left-width: 3px;
+    clear: both;
+    font-size: 15px;
+}
+
+.post-copyright a {
+    box-shadow: none !important;
+    transition: all .3s;
 }
 
 @media (max-width: 650px) {
