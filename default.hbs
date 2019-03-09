@@ -14,7 +14,9 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="/assets/js/color-thief.min.js"></script>
+    <script src="{{asset "built/color-thief.min.js"}}"></script>
+    <link rel="stylesheet" href="{{asset "built/nprogress.css"}}">
+    <script src="{{asset "built/nprogress.js"}}"></script>
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -87,6 +89,12 @@
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 
     {{ghost_foot}}
-
+    <script>
+        NProgress.start();
+        window.onload = () => {
+            NProgress.done();
+        }
+        
+    </script>
 </body>
 </html>

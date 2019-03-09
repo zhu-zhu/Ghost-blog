@@ -479,6 +479,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     border-bottom: 2px solid #ddd;
 }
 
+.bar, .spinner {
+    z-index: 999 !important;
+}
+
+.post-card:last-child:after {
+    border-bottom: 2px solid #fff;
+}
+
 .post-card-image-link {
     position: relative;
     display: block;
