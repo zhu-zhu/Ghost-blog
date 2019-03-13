@@ -1076,14 +1076,14 @@ Usage (In Ghost editor):
 
 .post-full-content blockquote {
     margin: 0 0 1.5em;
-    padding: 0 1.5em;
+    padding: 0 .5em;
     border-left: #3eb0ef 3px solid;
 }
 
 .post-full-content blockquote p {
     margin: 0 0 1em 0;
     color: inherit;
-    font-size: inherit;
+    font-size: .8em;
     line-height: inherit;
     font-style: italic;
 }
@@ -2492,7 +2492,7 @@ span {
 .post-copyright {
     border: 1px solid #3eb0ef;
     border-left: 3px solid #3eb0ef;
-    padding-left: 10px;
+    padding-left: .5em;
     background: #f7f7f7;
     margin: 1em 0;
     border-left-width: 3px;
