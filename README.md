@@ -1,5 +1,11 @@
-# ghost博客主题
+# kangna blog
 
-由原本的[Casper](https://github.com/TryGhost/Casper) 主题更改样式而来
+> kangna博客的主题
+
+
+- [x] color-thief post页背景变色
+- [x] prism 代码高亮
+- [x] nprogress 页面加载进度条
+- [ ] 个人页面(anime.js)
 
 开发中:D
