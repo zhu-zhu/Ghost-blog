@@ -499,12 +499,37 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transform: scale(1.1)
 }
 
+.blind {
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+    /* background-color: #00bcd4ba; */
+}
+
+.post-card-image-link:hover .blind {
+    background-color: #00bcd4ba;
+}
+
 .post-card-image {
     width: auto;
     height: 200px;
     background: var(--lightgrey) no-repeat center center;
     background-size: cover;
     transition: all .3s;
+}
+
+.post-card-image i {
+    font-size: 5em;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    transition: all .3s;
+}
+
+.post-card-image-link:hover i {
+    left: 50%;
 }
 
 .post-card-content-link {
@@ -517,7 +542,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-content-link:hover {
     text-decoration: none;
-    color: #16a085;
+    color: #00bcd4;
 }
 
 .post-card-tags {
@@ -695,6 +720,15 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .reading-time a {
     color: #00BCD4;
+    padding: .4em;
+    border-radius: 3px;
+    transition: all .3s;
+}
+
+.reading-time a:hover {
+    background: #ededed;
+    padding: .4em;
+    border-radius: 3px;
 }
 
 .tags-links {
@@ -1135,6 +1169,20 @@ Usage (In Ghost editor):
 
 .post-full-content hr {
     margin: 4vw 0;
+}
+
+.backtop {
+    position: fixed;
+    right: -131px;
+    bottom: 0;
+    z-index: 999;
+    opacity: .3;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.backtop:hover {
+    opacity: 1;
 }
 
 .post-full-content hr:after {

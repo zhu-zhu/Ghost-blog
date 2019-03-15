@@ -27,6 +27,17 @@ into the {body} of the default.hbs template --}}
     </div>
 </header>
 
+<style>
+.nav li a:hover {
+    border-bottom: 4px solid #ffffff;
+}
+.post-header {
+    top: -60px;
+}
+</style>
+
+{{> floating-header}}
+
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
     <div class="innerer">

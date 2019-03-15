@@ -13,7 +13,7 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset "built/font-awesome.min.css"}}" rel="stylesheet">
     <script src="{{asset "built/color-thief.min.js"}}"></script>
     <link rel="stylesheet" href="{{asset "built/nprogress.css"}}">
     <script src="{{asset "built/nprogress.js"}}"></script>
@@ -89,10 +89,25 @@
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 
     {{ghost_foot}}
+    <div class="backtop"><img src="/assets/images/top.png" alt="" srcset=""></div>
     <script>
+        //swing
         NProgress.start();
+        document.querySelectorAll('.backtop')[0].addEventListener('click', () => {
+            $("html, body").animate({scrollTop: 0}, 300);
+        })
         window.addEventListener('load', () => {
             NProgress.done();
+        })
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop();
+            if(scroll > 400) {
+                document.querySelectorAll('.backtop')[0].style.right = '0px'
+                document.querySelectorAll('.post-header')[0].style.top = '0px'
+            }else if(scroll < 400) {
+                document.querySelectorAll('.backtop')[0].style.right = '-131px'
+                document.querySelectorAll('.post-header')[0].style.top = '-60px'
+            }
         })
     </script>
 </body>

@@ -1,0 +1,13 @@
+<nav class="pagination" role="navigation">
+    {{#if prev}}
+        <a class="prev" href="{{page_url prev}}"><i class="fa fa-chevron-left" aria-hidden="true"></i><span>上一页</span></a>
+    {{else}}
+        <span class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i><span>上一页</span></span>
+    {{/if}}
+    <span class="page-number">{{page}} / {{pages}}</span>
+    {{#if next}}
+        <a class="prev" href="{{page_url next}}"><span>下一页</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    {{else}}
+        <span class="prev"><span>下一页</span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+    {{/if}}
+</nav>
