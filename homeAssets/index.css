@@ -1,0 +1,140 @@
+* {
+    list-style: none;
+    font-family: -apple-system , BlinkMacSystemFont , "PingFang SC" , "Hiragino Sans GB" , "Helvetica Neue", "Segoe UI" , "Microsoft Yahei" , Helvetica , Arial , "Apple Color Emoji" , sans-serif
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #090502;
+    overflow: hidden;
+}
+
+.image {
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    opacity: 0;
+}
+
+.content {
+    width: 350px;
+    height: 400px;
+    margin-left: 220px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    opacity: 0;
+}
+
+.content > h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    font-family: Roboto Slab,georgia,serif;
+    margin: 0;
+    padding: 0;
+}
+
+.content > a {
+    transition: all .3s;
+    padding-bottom: 2px;
+    color: #c3c3c3;
+    text-decoration: none;
+    border-bottom: 2px solid #FFD58D;
+}
+
+.content > a:hover {
+    color: #ffffff;
+}
+
+.main {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin: -50px;
+    z-index: 1;
+}
+
+.main > div:first-child {
+    width: 25px;
+    height: 25px;
+    float: left;
+    background: #ffe06d;
+}
+
+.main > div:nth-child(2) {
+    width: 12px;
+    height: 12px;
+    background: #ffe06d;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+}
+
+.main > div:nth-child(3) {
+    width: 12px;
+    height: 12px;
+    background: #ffe06d;
+    margin: 0px 0 0px 0;
+    position: absolute;
+}
+
+.spread-left {
+    margin: 0px 0px 0px 38px;
+}
+
+.spread-bottom {
+    margin: 26px 0 0px 0;
+}
+
+.top-right {
+    top: 0px;
+    right: 0px;
+    transform: rotate(90deg)
+}
+
+.bottom-left {
+    bottom: 0px;
+    left: 0px;
+    transform: rotate(-90deg)
+}
+
+.bottom-right {
+    bottom: 0px;
+    right: 0px;
+    transform: rotate(180deg)
+}
+
+.tags {
+    font-size: 13px;
+}
+
+@media screen and (max-width: 1024px) {
+    .content {
+        width: 350px;
+        height: 400px;
+        margin-left: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ffffff;
+        opacity: 0;
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .content {
+        width: 300px;
+        height: 300px;
+        margin-left: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ffffff;
+        opacity: 0;
+        z-index: 2;
+    }
+}
