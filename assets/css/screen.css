@@ -245,7 +245,6 @@ a{
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    margin-right: 10px;
     letter-spacing: 0.4px;
     white-space: nowrap;
     -ms-overflow-scrolling: touch;
@@ -530,6 +529,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-image-link:hover i {
     left: 50%;
+}
+
+.post-card-image-link:active i {
+    left: 130%;
 }
 
 .post-card-content-link {

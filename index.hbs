@@ -3,14 +3,6 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<style>
-.nav-home a {
-    border-bottom: 4px solid #00bcd4;
-}
-.nav li a:hover {
-    border-bottom: 4px solid #00bcd4;
-}
-</style>
 <header class="site-header outer {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
     <div class="inner out">
         <div class="site-header-content">

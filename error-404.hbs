@@ -33,24 +33,11 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 
                 <section class="error-message">
                     <h1 class="error-code">{{code}}</h1>
-                    <p class="error-description">{{message}}</p>
-                    <a class="error-link" href="{{@blog.url}}">Go to the front page →</a>
+                    <p class="error-description">糟糕好像🐎都没有呢</p>
+                    <a class="error-link" href="{{@blog.url}}">让我们回去从前吧 →</a>
                 </section>
             </div>
         </main>
-
-        {{#get "posts" limit="3"}}
-        <aside class="outer">
-            <div class="inner">
-                <div class="post-feed">
-                    {{#foreach posts}}
-                        {{> "post-card"}}
-                    {{/foreach}}
-                </div>
-            </div>
-        </aside>
-        {{/get}}
-
     </div>
 </body>
 </html>
