@@ -40,6 +40,20 @@ a{
     text-decoration:none
 }
 
+svg {
+    vertical-align: unset !important;
+}
+
+.gt-btn-public {
+    border: 1px solid #3eb0ef!important;
+    background-color: #3eb0ef !important;
+}
+
+.gt-btn-preview {
+    background-color: #fff !important;
+    color: #3eb0ef;
+}
+
 .img {
     display: block;
     width: 100%;
@@ -301,10 +315,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 1;
 }
 
-.nav li a:hover {
-    border-bottom: 4px solid #ffffff;
-}
-
 .nav li {
     height: 60px;
     display: block;
@@ -315,7 +325,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-align: center;
 }
 
-.nav li a {
+.site-nav-left .nav li a {
     height: 64px;
     display: block;
     margin: 0;
@@ -328,7 +338,26 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transition: all .3s;
 }
 
-.nav li a:hover {
+.unpinned .nav li a {
+    height: 64px;
+    display: block;
+    margin: 0;
+    padding: 0px 12px;
+    color: #fff;
+    opacity: 1;
+    font-size: 16px;
+    line-height: 60px;
+    border-bottom: 4px solid #00bcd4;
+    transition: all .3s;
+}
+
+.unpinned .nav li a:hover {
+    text-decoration: none;
+    opacity: 1;
+    height: 60px;
+}
+
+.site-nav-left .nav li a:hover {
     text-decoration: none;
     opacity: 1;
     height: 60px;
@@ -531,9 +560,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     left: 50%;
 }
 
-.post-card-image-link:active i {
-    left: 130%;
-}
 
 .post-card-content-link {
     position: relative;
@@ -1039,7 +1065,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .post-full-content a {
     color: #000;
     word-break: break-word;
-    box-shadow: var(--blue) 0 -1px 0 inset;
 }
 
 .post-full-content a:hover {
@@ -1595,8 +1620,6 @@ Usage (In Ghost editor):
 span {
     background: none !important;
     text-indent: 0 !important;
-    width: auto !important;
-    height: auto !important;
 }
 
 .post-time {
@@ -2517,6 +2540,10 @@ span {
 
 .site-footer-nav {
     display: flex;
+}
+
+.site-footer-nav ul {
+    opacity: 1;
 }
 
 .site-footer-nav a {

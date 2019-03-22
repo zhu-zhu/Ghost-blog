@@ -1,10 +1,4 @@
 {{!< default}}
-{{!-- <header class="site-header outer">
-    <div class="inner">
-        {{> "site-nav"}}
-    </div>
-</header> --}}
-
 <link rel="stylesheet" href="/assets/css/prism.css">
 <script src="/assets/js/prism.js"></script>
 
@@ -18,6 +12,12 @@
 </header>
 
 {{#post}}
+
+<style>
+.unpinned .nav li a:hover {
+    border-bottom: 4px solid #ffffff;
+}
+</style>
 
 <main id="site-main" class="site-main outer">
     <div class="inner">
@@ -36,19 +36,7 @@
                         </div>
                     </div>
                 </div>
-                {{!-- <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-                    {{#primary_tag}}
-                        <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
-                    {{/primary_tag}}
-                </section>
-                <h1 class="post-full-title">{{title}}</h1> --}}
             </header>
-
-            {{!-- {{#if feature_image}}
-            <figure class="post-full-image" style="background-image: url({{feature_image}})">
-            </figure>
-            {{/if}} --}}
 
             <section class="post-full-content">
                 <div class="post-cover">
@@ -62,8 +50,24 @@
                         {{ title }}
                     </a>
                 </div>
-            </section>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+                <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
+                {{!-- <div id="gitalk-container"></div>
+                <script>
+                    var gitalk = new Gitalk({
+                        clientID: '',
+                        clientSecret: '',
+                        repo: 'Ghost-blog',
+                        owner: 'zhu-zhu',
+                        admin: ['zhu-zhu'],
+                        id: "ghost-{{comment_id}}",      // Ensure uniqueness and length less than 50
+                        distractionFreeMode: false  // Facebook-like distraction free mode
+                    })
+
+                    gitalk.render('gitalk-container') --}}
+                </script>
+            </section>
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
@@ -72,39 +76,14 @@
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
-            {{!-- <footer class="post-full-footer"> --}}
-
-                {{!-- There are two options for how we display the byline/author-info.
-                If the post has more than one author, we load a specific template
-                from includes/byline-multiple.hbs, otherwise, we just use the
-                default byline. --}}
-
-                {{!-- {{#has author="count:>1"}}
-                    {{> "byline-multiple"}}
-                {{else}}
-                    {{> "byline-single"}}
-                {{/has}} --}}
-
-            {{!-- </footer> --}}
-
-            {{!-- {{ tags }} --}}
-
-            {{!--
-            <section class="post-full-comments">
-                If you want to embed comments, this is a good place to do it!
-            </section>
-            --}}
 
         </article>
 
     </div>
 </main>
 
-{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{!-- {{> floating-header}} --}}
 
 {{/post}}
-
 <script>
     window.onload = () => {
         const titleImg = document.querySelectorAll('.post-cover img')[0],

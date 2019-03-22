@@ -32,12 +32,9 @@
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+                <section class="copyright"><a href="{{@blog.url}}">kangna</a> &copy; 2016 -  {{date format="YYYY"}}</section>
                 <nav class="site-footer-nav">
-                    <a href="{{@blog.url}}">Latest Posts</a>
-                    {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                    {{ navigation }}
                 </nav>
             </div>
         </footer>
@@ -72,11 +69,7 @@
 
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
+    <script src="/assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
 
     {{!-- {{#if pagination.pages}}
@@ -99,16 +92,7 @@
         window.addEventListener('load', () => {
             NProgress.done();
         })
-        $(window).scroll(function(){
-            var scroll = $(window).scrollTop();
-            if(scroll > 400) {
-                document.querySelectorAll('.backtop')[0].style.right = '0px'
-                document.querySelectorAll('.post-header')[0].style.top = '0px'
-            }else if(scroll < 400) {
-                document.querySelectorAll('.backtop')[0].style.right = '-131px'
-                document.querySelectorAll('.post-header')[0].style.top = '-60px'
-            }
-        })
+       
     </script>
 </body>
 </html>
