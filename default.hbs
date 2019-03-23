@@ -32,10 +32,24 @@
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@blog.url}}">kangna</a> &copy; 2016 -  {{date format="YYYY"}}</section>
-                <nav class="site-footer-nav">
+                <div class="size-foot-link site-footer-flex">
+                    <div class="size-foot-link-icon">
+                        <a href="https://github.com/zhu-zhu">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://t.me/joinchat/EAPVQ09wDytDYHAGhYM8yw">
+                            <i class="fa fa-telegram" aria-hidden="true"></i>
+                        </a>
+                        <a href="{{@site.url}}/post/rss/">
+                            <i class="fa fa-rss" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <nav class="site-footer-nav site-footer-flex">
                     {{ navigation }}
                 </nav>
+                <section class="copyright site-footer-flex">&copy;&nbsp;2016 -  {{date format="YYYY"}}&nbsp;<a href="{{@blog.url}}">康奈的博客</a>&nbsp;– kangna · Powered by Ghost · Theme by&nbsp;<a href="https://kangna.moe/">zhu-zhu</a></section>
+
             </div>
         </footer>
 

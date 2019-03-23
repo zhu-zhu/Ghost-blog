@@ -315,7 +315,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 1;
 }
 
-.nav li {
+header .nav li {
     height: 60px;
     display: block;
     margin: 0;
@@ -2513,7 +2513,7 @@ span {
 .site-footer {
     position: relative;
     padding-top: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     color: #fff;
     background: color(var(--darkgrey) l(-15%));
     margin-top: 50px;
@@ -2523,10 +2523,20 @@ span {
     width: 700px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
+}
+
+.site-footer-content .size-foot-link {
+    width: 100%;
+}
+
+.site-footer-content .site-footer-nav {
+    width: 100%;
+}
+
+.site-footer-content .copyright {
+    width: 100%;
 }
 
 .site-footer-content a {
@@ -2536,6 +2546,25 @@ span {
 .site-footer-content a:hover {
     color: rgba(255,255,255,1);
     text-decoration: none;
+}
+
+.site-footer-nav .nav {
+    width: auto;
+}
+
+.site-footer-nav .nav li a {
+    margin-left: 0;
+    margin: 0 10px;
+}
+
+.size-foot-link-icon a {
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+.site-footer-flex {
+    display: flex;
+    justify-content: center;
 }
 
 .site-footer-nav {

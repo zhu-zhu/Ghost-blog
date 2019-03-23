@@ -1,6 +1,6 @@
 # kangna blog
 
-> kangna博客的主题 [演示站](https://kangna.moe)
+> kangna博客的主题 [主站](https://kangna.moe)
 
 ## 待完成功能
 - [x] color-thief post页背景变色
