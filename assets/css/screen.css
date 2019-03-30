@@ -460,10 +460,6 @@ header .nav li {
         padding-right: 0;
         padding-left: 0;
     }
-    .site-nav-left {
-        margin-right: 0;
-        padding-left: 4vw;
-    }
     .site-nav-right {
         display: none;
     }
@@ -478,7 +474,6 @@ header .nav li {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -20px;
-    padding: 40px 0 0 0;
 }
 
 .post-card {
@@ -990,9 +985,9 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 @media (max-width: 1170px) {
-    .post-full-content {
+    /* .post-full-content {
         padding: 5vw 7vw 0;
-    }
+    } */
 }
 @media (max-width: 800px) {
     .post-full-content {
@@ -2087,6 +2082,20 @@ span {
     background-color: var(--blue);
 }
 
+@media (max-width: 1010px) {
+    .innerer {
+        width: 100%;
+    }
+    .post-feed {
+        padding: 0;
+        margin: 0;
+    }
+    .post-card {
+        width: 700px;
+        /* margin: 20px 15px 2px 15px; */
+    }
+}
+
 @media (max-width: 900px) {
     .floating-header {
         height: 40px;
@@ -2113,6 +2122,37 @@ span {
     .floating-header-title,
     .floating-header-divider {
         visibility: hidden;
+    }
+    .post-card {
+        width: 650px;
+        /* margin: 20px 15px 2px 15px; */
+        margin: 20px auto;
+    }
+    .site-nav-left {
+        /* margin-right: 0;
+        padding-left: 4vw; */
+        width: 650px;
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 700px) {
+    .post-card {
+        width: 100%;
+        margin: 20px 15px 2px 15px;
+    }
+    .site-nav-left {
+        width: 100%;
+        margin: 0 15px;
+    }
+    .site-footer-content {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .post-card-image {
+        height: 133px;
     }
 }
 
@@ -2537,6 +2577,7 @@ span {
 
 .site-footer-content .copyright {
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .site-footer-content a {
@@ -2550,6 +2591,10 @@ span {
 
 .site-footer-nav .nav {
     width: auto;
+}
+
+.site-footer-nav ul li {
+    padding-left: 0px !important;
 }
 
 .site-footer-nav .nav li a {
