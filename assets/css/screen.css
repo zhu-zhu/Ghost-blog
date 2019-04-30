@@ -144,6 +144,18 @@ svg {
     background-size: cover;
 }
 
+.site-header:before {
+    background-image: url('https://imikume.cdn.hazymoon.vip/wp-content/themes/Siren/images/grid.png');
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background-attachment: fixed;
+}
+
 .post-header {
     width: 100%;
     position: fixed;
@@ -174,7 +186,7 @@ svg {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
+    background-color: rgba(0,0,0,0.18);
 }
 
 .site-header:after {
@@ -600,8 +612,9 @@ header .nav li {
 }
 
 .post-card-excerpt p {
-    border-left: 5px solid #00bcd4;
+    border-left: 4px solid #00bcd4;
     padding-left: 10px;
+    font-size: 13px;
 }
 
 .post-card-meta {
@@ -1140,9 +1153,9 @@ Usage (In Ghost editor):
 .post-full-content blockquote p {
     margin: 0 0 1em 0;
     color: inherit;
-    font-size: .8em;
+    font-size: 16px;
     line-height: inherit;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .post-full-content blockquote p:last-child {
@@ -1150,12 +1163,13 @@ Usage (In Ghost editor):
 }
 
 .post-full-content code {
-    padding: 0 5px 2px;
-    font-size: 0.8em;
+    padding: 2px 5px;
+    font-size: .8em;
     line-height: 1em;
     font-weight: 400!important;
-    background: var(--whitegrey);
+    background: #e5eff5;
     border-radius: 3px;
+    border: 1px solid #ccc;
 }
 
 .post-full-content p code {
@@ -1255,9 +1269,10 @@ Usage (In Ghost editor):
 }
 
 .post-full-content h3 {
-    margin: 0.5em 0 0.2em 0;
-    font-size: 2.8rem;
+    margin: .5em 0 0.7em;
+    /* font-size: 2.8rem; */
     font-weight: 700;
+    font-size: 20px;
 }
 @media (max-width: 500px) {
     .post-full-content h3 {
@@ -2173,6 +2188,15 @@ span {
     max-width: 920px;
 }
 
+.post-content p {
+    font-size: 16px;
+    margin: 0 0 16px;
+}
+
+.post-content li {
+    font-size: 16px;
+}
+
 .post-template .post-content > p:first-child {
     font-size: 1.25em;
     line-height: 1.5em;
@@ -2603,8 +2627,13 @@ span {
 }
 
 .size-foot-link-icon a {
-    margin: 0 10px;
+    margin: 4px 10px;
     font-size: 1.5em;
+}
+
+.size-foot-link-icon {
+    display: flex;
+    align-items: center;
 }
 
 .site-footer-flex {

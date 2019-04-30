@@ -29,7 +29,12 @@
                     <div class="wp">
                         <h1 class="post-full-title">{{title}}</h1>
                         <div class="entry-meta">
-                            <span class="post-tag"><a href="/tag/wordpress/">WordPress</a></span>
+                            <span class="post-tag">
+                                {{!-- {{#foreach tags}}
+                                    <a href="{{url}}">{{name}}</a>
+                                {{/foreach}} --}}
+                                <span class="post-tag">{{tags}}</span>
+                                </span>
                             <span class="dot">•</span>
                             <span class="post-time">更新于<time datetime="2019-03-06"> 2019-03-06</time></span>
                             <span>on <a href="/author/kangna/">kangna</a></span>

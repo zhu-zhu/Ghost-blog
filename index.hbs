@@ -47,15 +47,18 @@ into the {body} of the default.hbs template --}}
 </main>
 <script src="/assets/js/jquery.min.js"></script>
 <script>
-    $(window).scroll(function(){
-        var scroll = $(window).scrollTop();
-        if(scroll > 400) {
-            document.querySelectorAll('.backtop')[0].style.right = '0px'
-            document.querySelectorAll('.post-header')[0].style.top = '0px'
-        }else if(scroll < 400) {
-            document.querySelectorAll('.backtop')[0].style.right = '-131px'
-            document.querySelectorAll('.post-header')[0].style.top = '-60px'
-        }
-    })
+    $(function () {
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop();
+            if(scroll > 400) {
+                document.querySelectorAll('.backtop')[0].style.right = '0px'
+                document.querySelectorAll('.post-header')[0].style.top = '0px'
+            }else if(scroll < 400) {
+                document.querySelectorAll('.backtop')[0].style.right = '-131px'
+                document.querySelectorAll('.post-header')[0].style.top = '-60px'
+            }
+        })
+    });
+
 </script>
 {{pagination}}

@@ -1,50 +1,74 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
+<link rel="stylesheet" href="/assets/css/prism.css">
+<script src="/assets/js/prism.js"></script>
 
-{{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header outer">
-    <div class="inner">
-        {{> "site-nav"}}
+<header class="post-header">
+    <a class="post-blog-logo" href="{{ @blog.url }}">
+        <img src="{{@blog.logo}}" alt="">
+    </a>
+    <div class="unpinned">
+        {{ navigation }}
     </div>
 </header>
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
+
+<style>
+.unpinned .nav li a:hover {
+    border-bottom: 4px solid #ffffff;
+}
+.post-full-header {
+    margin-bottom: 0px;
+}
+.post-full-content a {
+    color: #3eb0ef;
+    border-bottom: 2px solid #ffffff;
+    transition: all .3s;
+}
+.post-full-content a:hover {
+    border-bottom-color: #3eb0ef;
+}
+.post-full-content {
+    margin-top: 50px;
+}
+.post-full-content h2 {
+    margin: .5em 0 .5em;
+}
+</style>
 
 <main id="site-main" class="site-main outer">
     <div class="inner">
-
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-
-            <header class="post-full-header">
-                <h1 class="post-full-title">{{title}}</h1>
+            <header class="post-full-header" style="background-image:url({{feature_image}});background-position-y: -97px;">
+                <div class="color-background">
+                    <div class="wp">
+                        <h1 class="post-full-title">{{title}}</h1>
+                        <div class="entry-meta">
+                            <span class="post-tag">
+                                {{!-- {{#foreach tags}}
+                                    <a href="{{url}}">{{name}}</a>
+                                {{/foreach}} --}}
+                                <span class="post-tag">{{tags}}</span>
+                                </span>
+                            <span class="dot">•</span>
+                            <span class="post-time">更新于<time datetime="2019-03-06"> 2019-03-06</time></span>
+                            <span>on <a href="/author/kangna/">kangna</a></span>
+                        </div>
+                    </div>
+                </div>
             </header>
-
-            {{#if feature_image}}
-            <figure class="post-full-image" style="background-image: url({{feature_image}})">
-            </figure>
-            {{/if}}
-
             <section class="post-full-content">
+                {{!-- <div class="post-cover">
+                    <img src="{{ feature_image }}" alt="" srcset="">
+                </div> --}}
                 <div class="post-content">
                     {{content}}
                 </div>
             </section>
-
         </article>
 
     </div>
 </main>
 
-{{/post}}
 
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-<script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
-</script>
-{{/contentFor}}
+{{/post}}
