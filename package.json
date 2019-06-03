@@ -1,7 +1,7 @@
 {
-    "name": "casper",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-    "demo": "https://demo.ghost.io",
+    "name": "ghost-blog",
+    "description": "一个魔改后的主题",
+    "demo": "https://kangna.moe",
     "version": "2.7.1",
     "engines": {
         "ghost": ">=2.0.0"
@@ -17,9 +17,9 @@
         "test": "gscan ."
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "kangna",
+        "email": "i@kangna.moe",
+        "url": "https://kangna.moe"
     },
     "gpm": {
         "type": "theme",

@@ -33,11 +33,18 @@ production stylesheet in assets/built/screen.css
 
 body, p, div {
     /* background: #f4f8fb; */
-    font-family: 'Lucida Grande','Helvetica Neue',Helvetica,Arial,Verdana,'PingFang SC','Hiragino Sans GB',STHeiti,'Microsoft YaHei','WenQuanYi Micro Hei','WenQuanYi Micro Hei Mono','WenQuanYi Zen Hei','WenQuanYi Zen Hei Mono','Noto Sans CJK SC','Source Han Sans CN',SimSun,sans-serif
+    font-family: -apple-system,BlinkMacSystemFont,"Lucida Grande","Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","Noto Sans CJK SC","Source Han Sans CN",SimSun,sans-serif
 }
 
 a{
-    text-decoration:none
+    text-decoration:none;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    font-family: -apple-system,BlinkMacSystemFont,"Lucida Grande","Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","Noto Sans CJK SC","Source Han Sans CN",SimSun,sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -ms-text-autospace: ideograph-numeric;
+    text-autospace: ideograph-numeric;
 }
 
 svg {
@@ -574,6 +581,8 @@ header .nav li {
     display: block;
     color: var(--darkgrey);
     transition: all .2s;
+    font-size: 28px;
+    font-weight: 400;
 }
 
 .post-card-content-link:hover {
@@ -615,6 +624,13 @@ header .nav li {
     border-left: 4px solid #00bcd4;
     padding-left: 10px;
     font-size: 13px;
+    font-family: -apple-system,BlinkMacSystemFont,"Lucida Grande","Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","Noto Sans CJK SC","Source Han Sans CN",SimSun,sans-serif;
+    line-height: 1.7;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -ms-text-autospace: ideograph-numeric;
+    text-autospace: ideograph-numeric;
 }
 
 .post-card-meta {
@@ -1151,10 +1167,11 @@ Usage (In Ghost editor):
 }
 
 .post-full-content blockquote p {
+    font-weight: 400;
     margin: 0 0 1em 0;
     color: inherit;
     font-size: 16px;
-    line-height: inherit;
+    line-height: 1.7;
     /* font-style: italic; */
 }
 
@@ -1620,11 +1637,8 @@ Usage (In Ghost editor):
 }
 
 .entry-meta a {
-    color: #00BCD4
-}
-
-.dot {
-    margin: 0 .4em
+    color: #00BCD4;
+    font-size: 14px;
 }
 
 span {
@@ -2191,6 +2205,7 @@ span {
 .post-content p {
     font-size: 16px;
     margin: 0 0 16px;
+    line-height: 1.7;
 }
 
 .post-content li {
